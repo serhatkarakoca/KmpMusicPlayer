@@ -11,10 +11,17 @@ import kotlinx.coroutines.flow.onStart
 
 
 internal class RemoteDataSource(private val api: ApiService, private val dispatcher: Dispatcher) {
-    suspend fun getMovies(page: Int) = flow {
-        emit(api.getMovies(page))
+    suspend fun search(query: String) = flow {
+        emit(api.search(query))
     }.handleResourceFlow()
 
+    suspend fun getPlaylistDetails(playlistId: String) = flow {
+        emit(api.getPlaylistDetails(playlistId))
+    }.handleResourceFlow()
+
+    suspend fun getMusicDetails(url: String) = flow {
+        emit(api.getMusicDetails(url))
+    }.handleResourceFlow()
 
     private fun <T> Flow<Resource<T>>.handleResourceFlow(): Flow<Resource<T>> =
         onStart { emit(Resource.Loading) }

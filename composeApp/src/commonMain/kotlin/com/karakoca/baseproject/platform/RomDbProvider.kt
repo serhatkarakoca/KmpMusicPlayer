@@ -1,5 +1,5 @@
 package com.karakoca.baseproject.platform
 
-import com.karakoca.baseproject.data.local.database.MovieDatabase
+import com.karakoca.baseproject.data.local.database.MusicDatabase
 
-internal expect fun getRoomDatabase(): MovieDatabase
+internal expect fun getRoomDatabase(): MusicDatabase

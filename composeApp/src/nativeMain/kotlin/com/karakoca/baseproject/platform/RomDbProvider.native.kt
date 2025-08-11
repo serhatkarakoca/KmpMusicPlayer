@@ -2,7 +2,7 @@ package com.karakoca.baseproject.platform
 
 import androidx.room.Room
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import com.karakoca.baseproject.data.local.database.MovieDatabase
+import com.karakoca.baseproject.data.local.database.MusicDatabase
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
@@ -10,9 +10,9 @@ import platform.Foundation.NSDocumentDirectory
 import platform.Foundation.NSFileManager
 import platform.Foundation.NSUserDomainMask
 
-internal actual fun getRoomDatabase(): MovieDatabase {
+internal actual fun getRoomDatabase(): MusicDatabase {
     val dbFile = documentDirectory() + "/favMovie.db"
-    return Room.databaseBuilder<MovieDatabase>(name = dbFile)
+    return Room.databaseBuilder<MusicDatabase>(name = dbFile)
         .fallbackToDestructiveMigrationOnDowngrade(false)
         .setDriver(BundledSQLiteDriver())
         .setQueryCoroutineContext(Dispatchers.IO)

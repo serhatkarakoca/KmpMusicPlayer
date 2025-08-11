@@ -43,26 +43,6 @@ fun HomeScreenMain(viewModel: HomeViewModel) {
             CircularProgressIndicator(Modifier.align(Alignment.Center))
         }
 
-        LazyVerticalGrid(
-            columns = GridCells.Adaptive(minSize = 170.dp),
-            contentPadding = PaddingValues(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-            state = gridState
-        ) {
-            itemsIndexed(state.movies, key = { it, it2 -> it2.id ?: it }) { index, item ->
-                MovieItem(item) { movie ->
-                    if (movie.isFavorite)
-                        viewModel.upsert(movie)
-                    else
-                        viewModel.deleteFav(movie)
-                }
-
-                if (index >= state.movies.lastIndex && !state.isLoading && !state.loadFinished)
-                    LaunchedEffect(Unit, block = { viewModel.setEvent(HomeEvent.GetMovies) })
-            }
-        }
-
     }
 }
 

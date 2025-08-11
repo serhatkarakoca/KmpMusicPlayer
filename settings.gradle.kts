@@ -1,4 +1,4 @@
-rootProject.name = "KmpBaseProject"
+rootProject.name = "KmpMusicPlayer"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

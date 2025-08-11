@@ -3,8 +3,9 @@ package com.karakoca.baseproject.data.remote
 
 import androidx.compose.ui.text.intl.Locale
 import com.karakoca.baseproject.data.model.Resource
-import com.karakoca.baseproject.data.model.discover.DiscoverMoviesDTO
-import com.karakoca.baseproject.data.model.error.TmdbError
+import com.karakoca.baseproject.data.model.music.PlaylistResponseDTO
+import com.karakoca.baseproject.data.model.music.SearchResponseDTO
+import com.karakoca.baseproject.data.model.music.download.DownloadDTO
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.ClientRequestException
@@ -24,11 +25,22 @@ import kotlinx.serialization.SerializationException
 
 internal class ApiService : KtorApi() {
 
-    suspend fun getMovies(page: Int) = client.safeRequest<DiscoverMoviesDTO> {
+    suspend fun search(query: String) = client.safeRequest<SearchResponseDTO> {
         method = Get
-        parameter("page", page)
-        parameter("language", Locale.current.language)
-        pathUrl("discover/movie")
+        parameter("q", query)
+        pathUrl("search")
+    }
+
+    suspend fun getPlaylistDetails(playlistId: String) = client.safeRequest<PlaylistResponseDTO> {
+        method = Get
+        parameter("id", playlistId)
+        pathUrl("playlist")
+    }
+
+    suspend fun getMusicDetails(url: String) = client.safeRequest<DownloadDTO> {
+        method = Get
+        parameter("url", url)
+        pathUrl("download")
     }
 
     private suspend inline fun <reified T> HttpClient.safeRequest(
@@ -39,9 +51,8 @@ internal class ApiService : KtorApi() {
             if (response.status == HttpStatusCode.OK)
                 Resource.Success(response.body())
             else {
-                val error = response.body() as? TmdbError
                 val request = response.request.url
-                Resource.Error(Throwable(message = error?.statusMessage + " : " + request.encodedPath + request.encodedQuery))
+                Resource.Error(Throwable(message = "ERROR" + " : " + request.encodedPath + request.encodedQuery))
             }
         } catch (e: ClientRequestException) {
             Resource.Error(e)

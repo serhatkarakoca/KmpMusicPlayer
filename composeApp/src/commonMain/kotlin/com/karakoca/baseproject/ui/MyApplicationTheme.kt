@@ -14,12 +14,12 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kmpbaseproject.composeapp.generated.resources.Res
-import kmpbaseproject.composeapp.generated.resources.poppins_black
-import kmpbaseproject.composeapp.generated.resources.poppins_bold
-import kmpbaseproject.composeapp.generated.resources.poppins_medium
-import kmpbaseproject.composeapp.generated.resources.poppins_regular
-import kmpbaseproject.composeapp.generated.resources.poppins_semibold
+import kmpmusicplayer.composeapp.generated.resources.Res
+import kmpmusicplayer.composeapp.generated.resources.poppins_black
+import kmpmusicplayer.composeapp.generated.resources.poppins_bold
+import kmpmusicplayer.composeapp.generated.resources.poppins_medium
+import kmpmusicplayer.composeapp.generated.resources.poppins_regular
+import kmpmusicplayer.composeapp.generated.resources.poppins_semibold
 import org.jetbrains.compose.resources.Font
 
 

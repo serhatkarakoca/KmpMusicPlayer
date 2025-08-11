@@ -4,9 +4,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.graphics.vector.ImageVector
-import kmpbaseproject.composeapp.generated.resources.Res
-import kmpbaseproject.composeapp.generated.resources.favorites
-import kmpbaseproject.composeapp.generated.resources.home
+import kmpmusicplayer.composeapp.generated.resources.Res
+import kmpmusicplayer.composeapp.generated.resources.favorites
+import kmpmusicplayer.composeapp.generated.resources.home
 import org.jetbrains.compose.resources.StringResource
 
 interface Destinations {

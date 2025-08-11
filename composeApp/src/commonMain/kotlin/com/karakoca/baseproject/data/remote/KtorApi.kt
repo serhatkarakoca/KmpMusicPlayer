@@ -1,7 +1,7 @@
 package com.karakoca.baseproject.data.remote
 
 
-import KmpBaseProject.composeApp.BuildConfig
+import KmpMusicPlayer.composeApp.BuildConfig
 import com.karakoca.baseproject.data.local.Constants.BASE_URL
 import com.karakoca.baseproject.platform.chuckerProvider
 import io.ktor.client.HttpClient
@@ -49,8 +49,7 @@ internal abstract class KtorApi {
         contentType(ContentType.Application.Json)
         url {
             takeFrom(BASE_URL)
-            path("3", path)
-            parameter("api_key", BuildConfig.API_KEY)
+            path(path)
         }
     }
 }

@@ -13,7 +13,6 @@
 		5C0B398E2C6CD8F1009C6C64 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5C0B398D2C6CD8F1009C6C64 /* FirebaseAnalytics */; };
 		5C0B39902C6CD8F1009C6C64 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5C0B398F2C6CD8F1009C6C64 /* FirebaseAuth */; };
 		5C0B39922C6CD8F1009C6C64 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5C0B39912C6CD8F1009C6C64 /* FirebaseCrashlytics */; };
-		5C2DDE322C6E4A5B0083515E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C2DDE312C6E4A5B0083515E /* GoogleService-Info.plist */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,8 +20,7 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
-		5C2DDE312C6E4A5B0083515E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		7555FF7B242A565900829871 /* KmpBaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KmpBaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7555FF7B242A565900829871 /* KmpMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KmpMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3632DC29227652001CCB65 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -70,7 +68,7 @@
 		7555FF7C242A565900829871 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7555FF7B242A565900829871 /* KmpBaseProject.app */,
+				7555FF7B242A565900829871 /* KmpMusicPlayer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,7 +76,6 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				5C2DDE312C6E4A5B0083515E /* GoogleService-Info.plist */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -119,7 +116,7 @@
 				5C0B39912C6CD8F1009C6C64 /* FirebaseCrashlytics */,
 			);
 			productName = iosApp;
-			productReference = 7555FF7B242A565900829871 /* KmpBaseProject.app */;
+			productReference = 7555FF7B242A565900829871 /* KmpMusicPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -166,7 +163,6 @@
 			files = (
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
-				5C2DDE322C6E4A5B0083515E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

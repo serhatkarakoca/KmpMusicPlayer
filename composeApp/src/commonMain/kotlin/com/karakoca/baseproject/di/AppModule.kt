@@ -1,18 +1,18 @@
 package com.karakoca.baseproject.di
 
-import com.karakoca.baseproject.data.local.database.MovieDao
-import com.karakoca.baseproject.data.local.database.MovieDatabase
+import com.karakoca.baseproject.data.local.database.MusicDao
+import com.karakoca.baseproject.data.local.database.MusicDatabase
 import com.karakoca.baseproject.data.remote.ApiService
 import com.karakoca.baseproject.data.remote.RemoteDataSource
-import com.karakoca.baseproject.data.repository.MovieRepositoryImpl
-import com.karakoca.baseproject.domain.repository.MovieRepository
-import com.karakoca.baseproject.domain.usecase.GetMoviesUseCase
+import com.karakoca.baseproject.data.repository.MusicRepositoryImpl
+import com.karakoca.baseproject.domain.repository.MusicRepository
+import com.karakoca.baseproject.domain.usecase.SearchUseCase
 import com.karakoca.baseproject.platform.getDatastoreModuleByPlatform
 import com.karakoca.baseproject.platform.getRoomDatabase
 import com.karakoca.baseproject.platform.provideDispatcher
 import com.karakoca.baseproject.presentation.favorite.FavoriteViewModel
 import com.karakoca.baseproject.presentation.home.HomeViewModel
-import org.koin.compose.viewmodel.dsl.viewModel
+import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
 
@@ -22,20 +22,20 @@ val dataModule = module {
 }
 
 val domainModule = module {
-    single<MovieRepository> { MovieRepositoryImpl(get()) }
+    single<MusicRepository> { MusicRepositoryImpl(get()) }
 
     //useCases
-    factory { GetMoviesUseCase() }
+    factory { SearchUseCase() }
 
     //viewModels
-    viewModel { HomeViewModel(get(), get(), get()) }
-    viewModel { FavoriteViewModel(get()) }
+    viewModelOf(::HomeViewModel)
+    viewModelOf(::FavoriteViewModel)
 }
 
 val platformModule = module {
     factory { provideDispatcher() }
-    single<MovieDatabase> { getRoomDatabase() }
-    single<MovieDao> { get<MovieDatabase>().getDao() }
+    single<MusicDatabase> { getRoomDatabase() }
+    single<MusicDao> { get<MusicDatabase>().getDao() }
 }
 
 private val sharedModules = listOf(dataModule, domainModule, platformModule)
